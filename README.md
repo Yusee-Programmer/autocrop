@@ -50,50 +50,79 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ```bash
 git clone https://github.com/yourusername/autocrop-pro.git
 cd autocrop-pro
-2. Install dependencies
+```
+
+### 2. Install dependencies
+```bash
 pip install opencv-python numpy torch torchvision
 pip install git+https://github.com/facebookresearch/segment-anything.git
-🧠 Download AI Model (SAM)
+```
 
-Download a pretrained model checkpoint:
-
+### 3. Download AI Model (SAM)
+```bash
 wget https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth
-🚀 Usage
-🔹 Basic (AI mode)
+```
+
+## 🚀 Usage
+
+### Basic (AI mode)
+```bash
 python autocrop_pro.py image.png --checkpoint sam_vit_b_01ec64.pth
-🔹 Grid Mode (Perfect for Icon Sheets)
+```
+
+### Grid Mode (Perfect for Icon Sheets)
+```bash
 python autocrop_pro.py icons.png --grid-mode --rows 4 --cols 5
-🔹 Preview Before Saving
+```
+
+### Preview Before Saving
+```bash
 python autocrop_pro.py image.png \
   --checkpoint sam_vit_b_01ec64.pth \
   --preview
-🔹 Batch Processing
+```
+
+### Batch Processing
+```bash
 python autocrop_pro.py images/ \
   --batch \
   --checkpoint sam_vit_b_01ec64.pth
-🔹 Export Format (JPG / WEBP)
+```
+
+### Export Format (JPG / WEBP)
+```bash
 python autocrop_pro.py image.png \
   --checkpoint sam_vit_b_01ec64.pth \
   --format webp
-🔹 Merge Overlapping Objects
+```
+
+### Merge Overlapping Objects
+```bash
 python autocrop_pro.py image.png \
   --checkpoint sam_vit_b_01ec64.pth \
   --merge
-⚙️ CLI Options
-Option	Description
-input	Input image or folder
---output	Output directory (default: outputs/)
---batch	Process a folder of images
---grid-mode	Enable grid slicing
---rows	Number of grid rows
---cols	Number of grid columns
---merge	Merge overlapping boxes
---preview	Show detection preview
---format	Output format (png, jpg, webp)
---min-size	Minimum object size
---checkpoint	Path to SAM model
---model-type	SAM model (vit_b, vit_l, vit_h)
-📁 Output Structure
+```
+
+## ⚙️ CLI Options
+
+Option | Description
+--- | ---
+`input` | Input image or folder
+`--output` | Output directory (default: outputs/)
+`--batch` | Process a folder of images
+`--grid-mode` | Enable grid slicing
+`--rows` | Number of grid rows
+`--cols` | Number of grid columns
+`--merge` | Merge overlapping boxes
+`--preview` | Show detection preview
+`--format` | Output format (`png`, `jpg`, `webp`)
+`--min-size` | Minimum object size
+`--checkpoint` | Path to SAM model
+`--model-type` | SAM model (`vit_b`, `vit_l`, `vit_h`)
+
+## 📁 Output Structure
+
+```text
 outputs/
  ├── image1/
  │    ├── 0.png
@@ -101,67 +130,61 @@ outputs/
  │    └── ...
  ├── image2/
  │    └── ...
-🧠 How It Works
+```
 
-### AI Mode (Default)
+🧠 How It Works
+AI Mode (Default)
+
 Uses Meta's Segment Anything Model (SAM) to:
 
-- Detect objects automatically
-- Generate segmentation masks
-- Convert masks into bounding boxes
-- Crop and export each object
+Detect objects automatically
+Generate segmentation masks
+Convert them into bounding boxes
+Crop and export each object
+Grid Mode
 
-### Grid Mode
-Splits an image into equal rows and columns:
+Splits image into equal rows & columns:
 
-- Ideal for icon packs and UI sheets
-- Best for structured layouts
-- Supports custom rows and columns
-
-### ⚠️ Limitations
-
-- AI mode may split one object into multiple parts
-- AI mode may detect too many small regions
-- Grid mode requires correct row/column input
-- Large SAM models may require GPU for best performance
-
-### 💡 Use Cases
-
-- 🎨 Extract UI assets and icons
-- 📦 Generate datasets for AI training
-- 🌐 Prepare images for web apps
-- 🧪 Research and computer vision experiments
-
-### 🔥 Roadmap
-
-- GUI desktop application
-- Web interface for upload and crop
-- Auto grid detection
-- YOLO integration for object-specific detection
-- Publish as a pip package (`pip install autocrop-pro`)
-
-### 🤝 Contributing
+Ideal for icon packs
+Perfect precision when layout is structured
+⚠️ Limitations
+AI mode may:
+Split one object into multiple parts
+Detect too many small regions
+Grid mode requires correct row/column input
+Large models may require GPU for best performance
+💡 Use Cases
+🎨 Extract UI assets & icons
+📦 Generate datasets for AI training
+🌐 Prepare images for web apps
+🧪 Research & computer vision experiments
+🔥 Roadmap
+ GUI (desktop app)
+ Web interface (upload & crop)
+ Auto grid detection
+ YOLO integration (object-specific detection)
+ pip package (pip install autocrop-pro)
+🤝 Contributing
 
 Pull requests are welcome!
 
 If you’d like to improve performance, add features, or fix bugs:
 
-1. Fork the repo
-2. Create a new branch
-3. Submit a PR
-
-### 📜 License
+Fork the repo
+Create a new branch
+Submit a PR
+📜 License
 
 MIT License
 
-### 👤 Author
+👤 Author
 
 Built by Yusee Habibu
 Founder of Python Niger 🇳🇪 | Python Hausa | Haske Framework
 
-### ⭐ Support
+⭐ Support
 
 If you find this useful:
 
-- Star the repo ⭐
-- Share with others 🚀
+Star the repo ⭐
+Share with others 🚀
