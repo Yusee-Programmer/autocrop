@@ -18,6 +18,28 @@ Designed for developers, designers, and dataset builders.
 - ✅ Merge overlapping detections
 - ✅ Export in multiple formats (`png`, `jpg`, `webp`)
 - ✅ Preview detections before saving
+
+---
+
+## 📦 Installation
+
+To install AutoCrop Pro, run the following command:
+
+```bash
+pip install autocrop-pro
+```
+
+## 🚀 Usage
+
+To use AutoCrop Pro, simply run:
+
+```bash
+autocrop --input <input_directory> --output <output_directory>
+```
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 - ✅ Fast and flexible CLI interface
 
 ---
@@ -80,58 +102,66 @@ outputs/
  ├── image2/
  │    └── ...
 🧠 How It Works
-AI Mode (Default)
 
+### AI Mode (Default)
 Uses Meta's Segment Anything Model (SAM) to:
 
-Detect objects automatically
-Generate segmentation masks
-Convert them into bounding boxes
-Crop and export each object
-Grid Mode
+- Detect objects automatically
+- Generate segmentation masks
+- Convert masks into bounding boxes
+- Crop and export each object
 
-Splits image into equal rows & columns:
+### Grid Mode
+Splits an image into equal rows and columns:
 
-Ideal for icon packs
-Perfect precision when layout is structured
-⚠️ Limitations
-AI mode may:
-Split one object into multiple parts
-Detect too many small regions
-Grid mode requires correct row/column input
-Large models may require GPU for best performance
-💡 Use Cases
-🎨 Extract UI assets & icons
-📦 Generate datasets for AI training
-🌐 Prepare images for web apps
-🧪 Research & computer vision experiments
-🔥 Roadmap
- GUI (desktop app)
- Web interface (upload & crop)
- Auto grid detection
- YOLO integration (object-specific detection)
- pip package (pip install autocrop-pro)
-🤝 Contributing
+- Ideal for icon packs and UI sheets
+- Best for structured layouts
+- Supports custom rows and columns
+
+### ⚠️ Limitations
+
+- AI mode may split one object into multiple parts
+- AI mode may detect too many small regions
+- Grid mode requires correct row/column input
+- Large SAM models may require GPU for best performance
+
+### 💡 Use Cases
+
+- 🎨 Extract UI assets and icons
+- 📦 Generate datasets for AI training
+- 🌐 Prepare images for web apps
+- 🧪 Research and computer vision experiments
+
+### 🔥 Roadmap
+
+- GUI desktop application
+- Web interface for upload and crop
+- Auto grid detection
+- YOLO integration for object-specific detection
+- Publish as a pip package (`pip install autocrop-pro`)
+
+### 🤝 Contributing
 
 Pull requests are welcome!
 
 If you’d like to improve performance, add features, or fix bugs:
 
-Fork the repo
-Create a new branch
-Submit a PR
-📜 License
+1. Fork the repo
+2. Create a new branch
+3. Submit a PR
+
+### 📜 License
 
 MIT License
 
-👤 Author
+### 👤 Author
 
 Built by Yusee Habibu
 Founder of Python Niger 🇳🇪 | Python Hausa | Haske Framework
 
-⭐ Support
+### ⭐ Support
 
 If you find this useful:
 
-Star the repo ⭐
-Share with others 🚀
+- Star the repo ⭐
+- Share with others 🚀
